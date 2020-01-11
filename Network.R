@@ -34,7 +34,7 @@ diameter(net)###Network diameter
 graph.density(net)###Graph density
 
 
-##Caculation of z and c score 
+##Caculation of z score and c score 
 
 zi.pi<-function(nodes_bulk,z.bulk,type=1,
                 modularity_class='modularity_class',degree='degree'){
