@@ -2,7 +2,7 @@ library(vegan)
 library(ape)
 library(ggplot2)
 
-otu<-read.csv("otu.csv",row.names=1,check.names = F)
+otu<-read.csv("otu_tmm.csv",row.names=1,check.names = F)
 group<-read.csv("group.csv",row.names=1,check.names = F)
 otu=otu[match(rownames(group),rownames(otu)),]
 
