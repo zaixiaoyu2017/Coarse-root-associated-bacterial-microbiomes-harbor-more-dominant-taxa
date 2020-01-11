@@ -153,10 +153,10 @@ result.1<-zi.pi(nodes_bulk,z.bulk,type=1,modularity_class='modularity_class',deg
 result.2<-zi.pi(nodes_bulk,z.bulk,type=2,modularity_class='modularity_class',degree='degree')
 
 ## 
-zp_bulk$classi[which(zp_bulk$z<=2.5&zp_bulk$c<=0.62)]<-"Peripherals"
-zp_bulk$classi[which(zp_bulk$z<=2.5&zp_bulk$c>0.62)]<-"Connectors"
-zp_bulk$classi[which(zp_bulk$z>2.5&zp_bulk$c<=0.62)]<-"Module hubs"
-zp_bulk$classi[which(zp_bulk$z>2.5&zp_bulk$c>0.62)]<-"Network hubs"
+zp_bulk$classi[which(zp_bulk$z<=2.5&zp_bulk$c<=0.6)]<-"Peripherals"
+zp_bulk$classi[which(zp_bulk$z<=2.5&zp_bulk$c>0.6)]<-"Connectors"
+zp_bulk$classi[which(zp_bulk$z>2.5&zp_bulk$c<=0.6)]<-"Module hubs"
+zp_bulk$classi[which(zp_bulk$z>2.5&zp_bulk$c>0.6)]<-"Network hubs"
 
 
 zp_bulk$classi<-factor(zp_bulk$classi,levels=c("Peripherals","Connectors",
@@ -173,7 +173,7 @@ ggplot(zp_bulk,aes(c,z,colour=classi))+geom_point()+theme_bw()+
   facet_wrap(com~.,2)+
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank(),
         legend.position ="none")+labs(x="Among-module connectivity (c)",
-                                      y="Within-module connectivity (z)")+geom_hline(yintercept=2.5)+geom_vline(xintercept=0.62)+
+                                      y="Within-module connectivity (z)")+geom_hline(yintercept=2.5)+geom_vline(xintercept=0.6)+
   scale_colour_manual(values = cols)
 
 scale_x_continuous(breaks=xmaj,labels=xmaj)+
