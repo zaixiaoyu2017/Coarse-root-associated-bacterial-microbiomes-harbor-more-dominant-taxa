@@ -1,7 +1,7 @@
 library(ggplot2)
 library(ggtern)
 
-#data: A community table with taxa as rows, and columns including the relative abundance for each taxa of samples groups, rich and size.
+##data: A community table with taxa as rows, and columns including the relative abundance for each taxa of samples groups, rich and size.
 
 ggtern(data, aes( RD1,RD2,RD3)) +
   geom_mask() +
